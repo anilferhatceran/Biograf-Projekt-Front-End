@@ -1,27 +1,30 @@
 <div>
-  <form [formGroup]="addGenreForm" (ngSubmit)="onSubmitCreate()">
+  <form [formGroup]="addGenreForm" (ngSubmit)="onSubmitCreateGenre()">
     <div class="form-group">
       <label for="addGenre" class="col-form-label">Genre:</label>
-      <input formControlName="genreName" type="genre" class="form-control" id="addGenre">
+      <input formControlName="genreName" type="text" class="form-control" id="addGenre">
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       <button type="submit" class="btn btn-primary">Create Account</button>
     </div>
   </form>
-  <form [formGroup]="addMovieForm" (ngSubmit)="onSubmitCreate()">
+  <form [formGroup]="addMovieForm" (ngSubmit)="onSubmitCreateMovie()">
     <div class="form-group">
-      <label for="createAccEmail" class="col-form-label">Movie:</label>
-      <input formControlName="genreName" type="genre" class="form-control" id="addMovieTitle">
+      <label for="addMovieTitle" class="col-form-label">Title:</label>
+      <input formControlName="movieTitle" type="text" class="form-control" id="addMovieTitle">
 
-      <label for="createAccEmail" class="col-form-label">Movie:</label>
-      <input formControlName="genreName" type="genre" class="form-control" id="addMovieReleaseDate">
+      <label for="addMovieReleaseDate" class="col-form-label">Release date:</label>
+      <input formControlName="releaseDate" type="date" class="form-control" id="addMovieReleaseDate">
 
-      <label for="createAccEmail" class="col-form-label">Movie:</label>
-      <input formControlName="genreName" type="genre" class="form-control" id="addMovieDesc">
+      <label for="addMovieDesc" class="col-form-label">Description:</label>
+      <input formControlName="movieDesc" type="text" class="form-control" id="addMovieDesc">
 
-      <label for="createAccEmail" class="col-form-label">Movie:</label>
-      <input formControlName="genreName" type="genre" class="form-control" id="addMovieRunTime">
+      <label for="addMovieRunTime" class="col-form-label">Lenght:</label>
+      <input formControlName="movieRunTime" type="text" class="form-control" id="addMovieRunTime">
+
+      <label for="addMovieLanguage" class="col-form-label">LanguageID:</label>
+      <input formControlName="languageID" type="text" class="form-control" id="addMovieLanguage">
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

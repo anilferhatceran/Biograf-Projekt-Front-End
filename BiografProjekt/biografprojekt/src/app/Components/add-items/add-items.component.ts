@@ -27,17 +27,23 @@ export class AddItemsComponent implements OnInit {
       releaseDate: new FormControl(''),
       movieDesc: new FormControl(''),
       movieRunTime: new FormControl(''),
+      languageID: new FormControl(''),
     }
   );
 
   ngOnInit() {
   }
 
-  onSubmitCreate(){
-    console.log("Hej");
+  onSubmitCreateGenre(){
     console.log(this.addGenreForm.value);
 
-    this.service.postGenre(this.addGenreForm.value).subscribe(U => console.log(U));
+    this.service.postGenre(this.addGenreForm.value).subscribe(genre => console.log(genre));
+  }
+
+  onSubmitCreateMovie(){
+    console.log(this.addMovieForm.value);
+
+    this.service.postMovie(this.addMovieForm.value).subscribe(movie => console.log(movie));
   }
 
 }

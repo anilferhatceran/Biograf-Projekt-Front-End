@@ -38,4 +38,8 @@ postGenre(genre:Genre):Observable<Genre>{
   return this.http.post<Genre>(`${this.ROOT_URL}Genre`,genre,httpHeaders);
 }
 
+postMovie(movie:Movie):Observable<Movie>{
+  return this.http.post<Movie>(`${this.ROOT_URL}Movie`,movie,httpHeaders);
+}
+
 }
