@@ -6,11 +6,17 @@ import { MoviesComponent } from './Components/movies/movies.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { AboutUsComponent} from './Components/about-us/about-us.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { AdminComponent } from "./Components/admin/admin.component";
+import { MovieItemComponent } from "./Components/movie-item/movie-item.component";
+import { AddItemsComponent } from "./Components/add-items/add-items.component";
 
 const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'movies', component: MoviesComponent },
   { path: 'about-us', component: AboutUsComponent },
+  { path: 'admin',component:AdminComponent},
+  { path: 'movie-item',component:MovieItemComponent},
+  { path: 'add-items',component:AddItemsComponent}
 ];
 
 @NgModule({
@@ -18,4 +24,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ContactUsComponent,MoviesComponent, HeaderComponent, AboutUsComponent, FooterComponent]
+export const routingComponents = [ContactUsComponent,MoviesComponent, HeaderComponent, AboutUsComponent, FooterComponent,MovieItemComponent,AddItemsComponent]

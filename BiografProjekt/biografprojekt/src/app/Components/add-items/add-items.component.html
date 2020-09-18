@@ -1,0 +1,31 @@
+<div>
+  <form [formGroup]="addGenreForm" (ngSubmit)="onSubmitCreate()">
+    <div class="form-group">
+      <label for="addGenre" class="col-form-label">Genre:</label>
+      <input formControlName="genreName" type="genre" class="form-control" id="addGenre">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">Create Account</button>
+    </div>
+  </form>
+  <form [formGroup]="addMovieForm" (ngSubmit)="onSubmitCreate()">
+    <div class="form-group">
+      <label for="createAccEmail" class="col-form-label">Movie:</label>
+      <input formControlName="genreName" type="genre" class="form-control" id="addMovieTitle">
+
+      <label for="createAccEmail" class="col-form-label">Movie:</label>
+      <input formControlName="genreName" type="genre" class="form-control" id="addMovieReleaseDate">
+
+      <label for="createAccEmail" class="col-form-label">Movie:</label>
+      <input formControlName="genreName" type="genre" class="form-control" id="addMovieDesc">
+
+      <label for="createAccEmail" class="col-form-label">Movie:</label>
+      <input formControlName="genreName" type="genre" class="form-control" id="addMovieRunTime">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">Create Account</button>
+    </div>
+  </form>
+</div>
