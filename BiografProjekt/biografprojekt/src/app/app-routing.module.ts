@@ -9,6 +9,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { AdminComponent } from "./Components/admin/admin.component";
 import { MovieItemComponent } from "./Components/movie-item/movie-item.component";
 import { AddItemsComponent } from "./Components/add-items/add-items.component";
+import { LandingPageComponent } from "./Components/landing-page/landing-page.component";
 
 const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
@@ -24,4 +25,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ContactUsComponent,MoviesComponent, HeaderComponent, AboutUsComponent, FooterComponent,MovieItemComponent,AddItemsComponent]
+export const routingComponents = [ContactUsComponent,MoviesComponent, HeaderComponent, AboutUsComponent, FooterComponent,MovieItemComponent,AddItemsComponent,LandingPageComponent]
