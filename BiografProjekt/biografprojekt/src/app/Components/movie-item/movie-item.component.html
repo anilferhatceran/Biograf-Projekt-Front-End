@@ -1,8 +1,17 @@
-<div>
-    <h2 class="display-3">{{movie.movieTitle}}</h2>
 
-    {{movie.releaseDate}}
-    {{movie.movieRunTime}}
-    {{movie.movieDesc}}
+      <div class="card d-inline-block my-2 mx-2" style="width: 18rem;">
+        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{movie.movieTitle}}</h5>
+          <p class="card-text">{{movie.movieDesc}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{movie.releaseDate}}</li>
+          <li class="list-group-item">{{movie.movieRunTime}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Måske link til booke tid</a>
+          <a href="#" class="card-link">Eller et preview af de available tider</a>
+        </div>
+      </div>
 
-</div>
