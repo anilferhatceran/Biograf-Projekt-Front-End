@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
     console.log("Hej");
     console.log(this.createUserForm.value);
 
-    this.service.postUser(this.createUserForm.value).subscribe(U => console.log(U));
+    this.service.postUser(this.createUserForm.value).subscribe(user => console.log(user));
   }
 
   onSubmitLogin(user){

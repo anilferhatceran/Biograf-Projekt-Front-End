@@ -11,6 +11,7 @@ import { MovieItemComponent } from "./Components/movie-item/movie-item.component
 import { AddItemsComponent } from "./Components/add-items/add-items.component";
 import { DeleteItemComponent } from "./Components/delete-item/delete-item.component";
 import { LanguageComponent } from "./Components/language/language.component";
+import { LandingPageComponent } from "./Components/landing-page/landing-page.component";
 
 const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
@@ -28,4 +29,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ContactUsComponent,MoviesComponent, HeaderComponent, AboutUsComponent, FooterComponent,MovieItemComponent,AddItemsComponent,DeleteItemComponent,LanguageComponent]
+
+export const routingComponents = [ContactUsComponent,MoviesComponent, HeaderComponent, AboutUsComponent, FooterComponent,MovieItemComponent,AddItemsComponent,DeleteItemComponent,LanguageComponent,LandingPageComponent,]
