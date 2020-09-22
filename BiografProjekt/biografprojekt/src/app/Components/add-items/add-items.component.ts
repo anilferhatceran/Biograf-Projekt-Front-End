@@ -15,12 +15,6 @@ export class AddItemsComponent implements OnInit {
 
   constructor(private http:HttpClient,private service:HttpService) { }
 
-  addGenreForm = new FormGroup(
-    {
-      genreName: new FormControl(''),
-    }
-  );
-
   addMovieForm = new FormGroup(
     {
       movieTitle: new FormControl(''),
@@ -31,9 +25,22 @@ export class AddItemsComponent implements OnInit {
         languageID: new FormControl(''),
       })
     }
+    );
+
+  addGenreForm = new FormGroup(
+    {
+      genreName: new FormControl(''),
+    }
   );
 
-  ngOnInit() {
+  addLanguageForm = new FormGroup(
+    {
+      languageName: new FormControl(''),
+      languageCode: new FormControl(''),
+    }
+  );
+
+    ngOnInit() {
   }
 
   onSubmitCreateGenre(){
@@ -46,6 +53,13 @@ export class AddItemsComponent implements OnInit {
     console.log(this.addMovieForm.value);
 
     this.service.postMovie(this.addMovieForm.value).subscribe(movie => console.log(movie));
+  }
+
+  onSubmitCreateLanguage(){
+    console.log(this.addLanguageForm.value);
+
+    this.service.postLanguage(this.addLanguageForm.value).subscribe(language => console.log(language));
+
   }
 
 }

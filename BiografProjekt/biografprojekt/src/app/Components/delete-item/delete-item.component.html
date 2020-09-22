@@ -4,15 +4,33 @@
       <form [formGroup]="deleteMovieForm" (ngSubmit)="onSubmitDeleteMovie()">
         <h4>Delete Movie</h4>
         <div class="form-group">
-          <label for="deleteMovie" class="col-form-label">Movie:</label>
+          <label for="deleteMovie" class="col-form-label">Movie Name:</label>
           <input formControlName="movieTitle" type="text" class="form-control" id="deleteMovie">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Delete Movie</button>
         </div>
       </form>
-
+      <form [formGroup]="deleteLanguageForm" (ngSubmit)="onSubmitDeleteLanguage()">
+        <h4>Delete Language</h4>
+        <div class="form-group">
+          <label for="deleteLanguageName" class="col-form-label">Language Name:</label>
+          <input formControlName="languageName" type="text" class="form-control" id="deleteLanguageName">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Delete Language</button>
+        </div>
+      </form>
+      <form [formGroup]="deleteGenreForm" (ngSubmit)="onSubmitDeleteGenre()">
+        <h4>Delete Genre</h4>
+        <div class="form-group">
+          <label for="deleteGenreName" class="col-form-label">Genre Name:</label>
+          <input formControlName="genreName" type="text" class="form-control" id="deleteLanguageName">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Delete Genre</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

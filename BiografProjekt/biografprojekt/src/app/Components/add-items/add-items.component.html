@@ -1,17 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <form [formGroup]="addGenreForm" (ngSubmit)="onSubmitCreateGenre()">
-        <h4>Add Genre</h4>
-        <div class="form-group">
-          <label for="addGenre" class="col-form-label">Genre:</label>
-          <input formControlName="genreName" type="text" class="form-control" id="addGenre">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Submit Genre</button>
-        </div>
-      </form>
       <form [formGroup]="addMovieForm" (ngSubmit)="onSubmitCreateMovie()">
         <h4>Add Movie</h4>
         <div class="form-group">
@@ -33,8 +22,29 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Submit Movie</button>
+        </div>
+      </form>
+      <form [formGroup]="addGenreForm" (ngSubmit)="onSubmitCreateGenre()">
+        <h4>Add Genre</h4>
+        <div class="form-group">
+          <label for="addGenre" class="col-form-label">Genre:</label>
+          <input formControlName="genreName" type="text" class="form-control" id="addGenre">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit Genre</button>
+        </div>
+      </form>
+      <form [formGroup]="addLanguageForm" (ngSubmit)="onSubmitCreateLanguage()">
+        <h4>Add Language</h4>
+        <div class="form-group">
+          <label for="addLanguageName" class="col-form-label">Language Name:</label>
+          <input formControlName="languageName" type="text" class="form-control" id="addLanguageName">
+          <label for="addLanguageCode" class="col-form-label">Language Code:</label>
+          <input formControlName="languageCode" type="text" class="form-control" id="addLanguageCode">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit Language</button>
         </div>
       </form>
     </div>

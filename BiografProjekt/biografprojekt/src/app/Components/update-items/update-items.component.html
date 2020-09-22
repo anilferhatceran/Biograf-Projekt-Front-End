@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="putGenreForm" (ngSubmit)="onSubmitPutGenre()">
+        <h4>Update Genre</h4>
+        <div class="form-group">
+          <label for="putGenre" class="col-form-label">Genre ID:</label>
+          <input formControlName="genreID" type="number" class="form-control" id="putGenre">
+
+          <label for="putNewGenre" class="col-form-label">Updated Genre Name:</label>
+          <input formControlName="genreName" type="text" class="form-control" id="putNewGenre">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit Genre</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
