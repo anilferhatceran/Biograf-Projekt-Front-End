@@ -27,7 +27,9 @@ export class AddItemsComponent implements OnInit {
       releaseDate: new FormControl(''),
       movieDesc: new FormControl(''),
       movieRunTime: new FormControl(''),
-      languageID: new FormControl(''),
+      language: new FormGroup({
+        languageID: new FormControl(''),
+      })
     }
   );
 

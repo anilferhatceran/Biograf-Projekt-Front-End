@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/service/http.service';
 
 @Component({
   selector: 'app-screening-item',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScreeningItemComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private http:HttpClient,private service:HttpService) { }
 
   ngOnInit() {
   }

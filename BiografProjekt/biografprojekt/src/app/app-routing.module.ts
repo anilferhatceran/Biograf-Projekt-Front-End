@@ -9,6 +9,8 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { AdminComponent } from "./Components/admin/admin.component";
 import { MovieItemComponent } from "./Components/movie-item/movie-item.component";
 import { AddItemsComponent } from "./Components/add-items/add-items.component";
+import { DeleteItemComponent } from "./Components/delete-item/delete-item.component";
+import { LanguageComponent } from "./Components/language/language.component";
 
 const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'admin',component:AdminComponent},
   { path: 'movie-item',component:MovieItemComponent},
-  { path: 'add-items',component:AddItemsComponent}
+  { path: 'add-items',component:AddItemsComponent},
+  { path: 'delete-item',component:DeleteItemComponent},
+  { path: 'language',component:LanguageComponent},
 ];
 
 @NgModule({
@@ -24,4 +28,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ContactUsComponent,MoviesComponent, HeaderComponent, AboutUsComponent, FooterComponent,MovieItemComponent,AddItemsComponent]
+export const routingComponents = [ContactUsComponent,MoviesComponent, HeaderComponent, AboutUsComponent, FooterComponent,MovieItemComponent,AddItemsComponent,DeleteItemComponent,LanguageComponent]

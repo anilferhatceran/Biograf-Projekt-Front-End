@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="deleteMovieForm" (ngSubmit)="onSubmitDeleteMovie()">
+        <h4>Delete Movie</h4>
+        <div class="form-group">
+          <label for="deleteMovie" class="col-form-label">Movie:</label>
+          <input formControlName="movieTitle" type="text" class="form-control" id="deleteMovie">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Delete Movie</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

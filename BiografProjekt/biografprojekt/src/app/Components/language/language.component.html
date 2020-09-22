@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form (ngSubmit) = "onButtonGetLanguage(language)">
+        <button type="submit">gas</button>
+
+      </form>
+      <div *ngFor="let languages of language">
+        {{languages.languageName}}
+      </div>
+    </div>
+  </div>
+</div>

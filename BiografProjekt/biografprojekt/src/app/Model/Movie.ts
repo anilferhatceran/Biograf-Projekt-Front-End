@@ -1,4 +1,5 @@
 export interface Movie {
+  movieID:number;
   movieTitle:string;
   releaseDate:string;
   movieDesc:string;

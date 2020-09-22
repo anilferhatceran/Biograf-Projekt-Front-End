@@ -27,8 +27,10 @@
           <label for="addMovieRunTime" class="col-form-label">Lenght:</label>
           <input formControlName="movieRunTime" type="text" class="form-control" id="addMovieRunTime">
 
-          <label for="addMovieLanguage" class="col-form-label">LanguageID:</label>
-          <input formControlName="languageID" type="text" class="form-control" id="addMovieLanguage">
+          <div formGroupName ="language">
+            <label for="addMovieLanguage" class="col-form-label">LanguageID:</label>
+            <input formControlName="languageID" type="number" class="form-control" id="addMovieLanguage">
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

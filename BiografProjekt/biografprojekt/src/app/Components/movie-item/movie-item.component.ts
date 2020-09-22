@@ -11,11 +11,11 @@ import { Movie } from 'src/app/Model/Movie';
 })
 export class MovieItemComponent implements OnInit {
 
+  movies:Movie[];
   @Input() movie:Movie;
 
   constructor(private http:HttpClient,private service:HttpService) { }
 
   ngOnInit() {
   }
-
 }
