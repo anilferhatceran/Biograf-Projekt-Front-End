@@ -6,6 +6,12 @@ import { User } from '../Model/User';
 import { Movie } from "../Model/Movie";
 import { Genre } from "../Model/Genre";
 import { Language } from "../Model/Language";
+import { Hall } from '../Model/Hall';
+import { Seat } from '../Model/Seat';
+import { Row } from '../Model/Row';
+import { SeatRow } from '../Model/SeatRow';
+import { MovieScreening } from '../Model/MovieScreening';
+import { TicketPrice } from '../Model/TicketPrice';
 import { CATCH_ERROR_VAR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
@@ -62,4 +68,25 @@ deleteLanguage(languageName:string):Observable<{}>{
   return this.http.delete<Language>(`${this.ROOT_URL}Language/deleteLanguageName?languageName=${languageName}`);
 }
 
+postHall(hall:Hall):Observable<Hall>{
+  return this.http.post<Hall>(`${this.ROOT_URL}Hall`,hall);
+}
+getSeatBySeatTaken():Observable<Seat[]>{
+  return this.http.get<Seat[]>(`${this.ROOT_URL}Seat/seattaken?seattaken=false`);
+}
+postSeat(seat:Seat):Observable<Seat>{
+  return this.http.post<Seat>(`${this.ROOT_URL}Seat`,seat);
+}
+postRow(row:Row):Observable<Row>{
+  return this.http.post<Row>(`${this.ROOT_URL}Row`,row);
+}
+postSeatRow(seatRow:SeatRow):Observable<SeatRow>{
+  return this.http.post<SeatRow>(`${this.ROOT_URL}SeatRow`,seatRow);
+}
+postMovieScreening(movieScreening:MovieScreening):Observable<MovieScreening>{
+  return this.http.post<MovieScreening>(`${this.ROOT_URL}MovieScreening`,movieScreening);
+}
+postTicketPrice(ticketPrice:TicketPrice):Observable<TicketPrice>{
+  return this.http.post<TicketPrice>(`${this.ROOT_URL}TicketPrice`,ticketPrice);
+}
 }

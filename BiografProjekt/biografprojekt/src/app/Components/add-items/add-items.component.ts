@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpService } from 'src/app/service/http.service';
 import { Genre } from "src/app/Model/Genre";
+import { Seat } from "src/app/Model/Seat";
 
 @Component({
   selector: 'app-add-items',
@@ -11,7 +12,9 @@ import { Genre } from "src/app/Model/Genre";
 })
 export class AddItemsComponent implements OnInit {
 
+  testingVar;
   genres: Genre[];
+  seat:Seat[];
 
   constructor(private http:HttpClient,private service:HttpService) { }
 
@@ -26,6 +29,33 @@ export class AddItemsComponent implements OnInit {
       })
     }
     );
+  addSeatRowForm = new FormGroup(
+    {
+      row: new FormGroup({
+        rowID: new FormControl(''),
+      }),
+      seat: new FormGroup({
+        seatID: new FormControl(''),
+      }),
+      movieScreening: new FormGroup({
+        movieScreeningID: new FormControl(''),
+      })
+     }
+    );
+
+  addMovieScreeningForm = new FormGroup(
+    {
+      movie: new FormGroup({
+        movieID: new FormControl(''),
+      }),
+      hall: new FormGroup({
+        hallID: new FormControl(''),
+      }),
+      screeningDate: new FormControl(''),
+      screeningStartTime: new FormControl(''),
+      screeningEndTime: new FormControl(''),
+    }
+  )
 
   addGenreForm = new FormGroup(
     {
@@ -40,7 +70,34 @@ export class AddItemsComponent implements OnInit {
     }
   );
 
-    ngOnInit() {
+  addHallForm = new FormGroup(
+    {
+      hallNumOfSeats: new FormControl(''),
+      numOfRows: new FormControl(''),
+    }
+  )
+
+  addSeatsForm = new FormGroup(
+    {
+      numberOfSeats: new FormControl(''),
+    }
+  )
+  addRowsForm = new FormGroup(
+    {
+      numberOfRows: new FormControl(''),
+    }
+  )
+  addTicketPricesForm = new FormGroup(
+    {
+      ticketName: new FormControl(''),
+      ticketPrice: new FormControl(''),
+    }
+  )
+
+  ngOnInit():void {
+    this.service.getSeatBySeatTaken().subscribe(seats =>{
+      this.seat = seats;
+    })
   }
 
   onSubmitCreateGenre(){
@@ -60,6 +117,49 @@ export class AddItemsComponent implements OnInit {
 
     this.service.postLanguage(this.addLanguageForm.value).subscribe(language => console.log(language));
 
+  }
+
+  onSubmitCreateHall(){
+    this.service.postHall(this.addHallForm.value).subscribe(hall => console.log(hall));
+
+  }
+
+  onSubmitCreateSeats(){
+
+    for (let index = 0; index <= this.addSeatsForm.value.numberOfSeats; index++) {
+
+      let element:any = {seatNumber: index};
+
+      this.service.postSeat(element).subscribe(seat => console.log(seat));
+    }
+  }
+  onSubmitCreateRows(){
+
+    for (let index = 0; index <= this.addRowsForm.value.numberOfRows; index++) {
+
+      let element:any = {rowNumber: index};
+
+      this.service.postRow(element).subscribe(row => console.log(row));
+    }
+  }
+  onSubmitCreateSeatRow(){
+    console.log(this.addSeatRowForm.value);
+
+    this.service.postSeatRow(this.addSeatRowForm.value).subscribe(seatRow => console.log(seatRow));
+  }
+  onSubmitCreateMovieScreening(){
+    console.log(this.addMovieScreeningForm.value);
+
+    this.service.postMovieScreening(this.addMovieScreeningForm.value).subscribe(movieScreening => console.log(movieScreening));
+  }
+  onSubmitCreateTicketPrices(){
+    console.log(this.addTicketPricesForm.value);
+
+    this.service.postTicketPrice(this.addTicketPricesForm.value).subscribe(ticketPrice => console.log(ticketPrice));
+  }
+
+  onClickTest(){
+      console.log(this.testingVar);
   }
 
 }

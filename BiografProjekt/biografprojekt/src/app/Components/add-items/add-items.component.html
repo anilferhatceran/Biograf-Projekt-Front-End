@@ -1,6 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col">
+      <select [(ngModel)]="testingVar" (change)="onClickTest()" id="selectpicker">
+        <option  *ngFor="let seats of seat"[seat] = "seats">{{seats.seatNumber}}</option>
+      </select>
+
+      <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropright dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button id="seatNumber" class="dropdown-item" type="button" *ngFor="let seats of seat"[seat] = "seats">{{seats.seatNumber}}</button>
+        </div>
+      </div> -->
+
       <form [formGroup]="addMovieForm" (ngSubmit)="onSubmitCreateMovie()">
         <h4>Add Movie</h4>
         <div class="form-group">
@@ -45,6 +58,100 @@
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Submit Language</button>
+        </div>
+      </form>
+      <form [formGroup]="addHallForm" (ngSubmit)="onSubmitCreateHall()">
+        <h4>Add Hall</h4>
+        <div class="form-group">
+          <label for="addHallSeats" class="col-form-label">Number of seats in hall:</label>
+          <input formControlName="hallNumOfSeats" type="number" class="form-control" id="addHallSeats">
+
+          <label for="addHallRows" class="col-form-label">Number of rows in hall:</label>
+          <input formControlName="numOfRows" type="number" class="form-control" id="addHallRows">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit Hall</button>
+        </div>
+      </form>
+      <form [formGroup]="addSeatsForm" (ngSubmit)="onSubmitCreateSeats()">
+        <h4>Add Seats</h4>
+        <div class="form-group">
+          <label for="addSeats" class="col-form-label">Number of seats:</label>
+          <input formControlName="numberOfSeats" type="number" class="form-control" id="addSeats">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit Seats</button>
+        </div>
+      </form>
+      <form [formGroup]="addRowsForm" (ngSubmit)="onSubmitCreateRows()">
+        <h4>Add Rows</h4>
+        <div class="form-group">
+          <label for="addRows" class="col-form-label">Number of rows:</label>
+          <input formControlName="numberOfRows" type="number" class="form-control" id="addRows">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit Rows</button>
+        </div>
+      </form>
+      <form [formGroup]="addMovieScreeningForm" (ngSubmit)="onSubmitCreateMovieScreening()">
+        <h4>Add Movie Screening</h4>
+        <div class="form-group">
+          <div formGroupName="movie">
+            <label for="addMovieID" class="col-form-label">Movie ID:</label>
+            <input formControlName="movieID" type="number" class="form-control" id="addMovieID">
+          </div>
+
+          <div formGroupName="hall">
+            <label for="addHallID" class="col-form-label">Hall ID:</label>
+            <input formControlName="hallID" type="number" class="form-control" id="addHallID">
+          </div>
+
+          <label for="addScreeningDate" class="col-form-label">Screening Date:</label>
+          <input formControlName="screeningDate" type="string" class="form-control" id="addScreeningDate">
+
+          <label for="addScreeningStartTime" class="col-form-label">Screening Start-time:</label>
+          <input formControlName="screeningStartTime" type="string" class="form-control" id="addScreeningStartTime">
+
+          <label for="addScreeningEndTime" class="col-form-label">Screening End-time:</label>
+          <input formControlName="screeningEndTime" type="string" class="form-control" id="addScreeningEndTime">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit Movie Screening</button>
+        </div>
+      </form>
+      <form [formGroup]="addSeatRowForm" (ngSubmit)="onSubmitCreateSeatRow()">
+        <h4>Add Seat-Row</h4>
+        <div class="form-group">
+          <div formGroupName="row">
+            <label for="addRowID" class="col-form-label">Row ID:</label>
+            <input formControlName="rowID" type="number" class="form-control" id="addRowID">
+          </div>
+
+          <div formGroupName="seat">
+            <label for="addSeatID" class="col-form-label">Seat ID:</label>
+            <input formControlName="seatID" type="number" class="form-control" id="addSeatID">
+          </div>
+
+          <div formGroupName="movieScreening">
+            <label for="addMovieScreeningID" class="col-form-label">Movie Screening ID:</label>
+            <input formControlName="movieScreeningID" type="number" class="form-control" id="addMovieScreeningID">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit Seat-Row</button>
+        </div>
+      </form>
+      <form [formGroup]="addTicketPricesForm" (ngSubmit)="onSubmitCreateTicketPrices()">
+        <h4>Add Ticket Prices</h4>
+        <div class="form-group">
+          <label for="addTicketName" class="col-form-label">Ticket Name:</label>
+          <input formControlName="ticketName" type="text" class="form-control" id="addTicketName">
+
+          <label for="addTicketPrice" class="col-form-label">Ticket Price:</label>
+          <input formControlName="ticketPrice" type="number" class="form-control" id="addTicketPrice">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit Seats</button>
         </div>
       </form>
     </div>
