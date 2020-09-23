@@ -13,6 +13,7 @@ import { DeleteItemComponent } from "./Components/delete-item/delete-item.compon
 import { LanguageComponent } from "./Components/language/language.component";
 import { LandingPageComponent } from "./Components/landing-page/landing-page.component";
 import { UpdateItemsComponent } from './Components/update-items/update-items.component';
+import { ReservationComponent } from './Components/reservation/reservation.component';
 
 const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'delete-item',component:DeleteItemComponent},
   { path: 'language',component:LanguageComponent},
   { path: 'update-item',component:UpdateItemsComponent},
+  { path: 'reserve',component:ReservationComponent},
 ];
 
 @NgModule({
@@ -33,4 +35,4 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 export const routingComponents = [ContactUsComponent,MoviesComponent, HeaderComponent, AboutUsComponent, FooterComponent,
-  MovieItemComponent,AddItemsComponent,DeleteItemComponent,LanguageComponent,LandingPageComponent,UpdateItemsComponent]
+  MovieItemComponent,AddItemsComponent,DeleteItemComponent,LanguageComponent,LandingPageComponent,UpdateItemsComponent,ReservationComponent]

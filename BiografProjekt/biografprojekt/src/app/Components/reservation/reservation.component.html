@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let movies of movie">
+        {{movies.movieID}}
+        {{movies.movieTitle}}
+        {{movies.releaseDate}}
+        {{movies.movieRunTime}}
+        {{movies.language.languageName}}
+      </div>
+      <select [(ngModel)]="testingVar" (change)="onClickTest()" id="selectpicker">
+        <option  *ngFor="let seats of seat"[seat] = "seats">{{seats.seatNumber}}</option>
+      </select>
+    </div>
+  </div>
+</div>

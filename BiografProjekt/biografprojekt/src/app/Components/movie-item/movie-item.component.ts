@@ -18,4 +18,8 @@ export class MovieItemComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  onClick(){
+    sessionStorage.setItem("movieTitle", this.movie.movieTitle);
+  }
 }

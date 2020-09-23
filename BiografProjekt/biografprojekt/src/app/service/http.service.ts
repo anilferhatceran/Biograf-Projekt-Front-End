@@ -12,6 +12,8 @@ import { Row } from '../Model/Row';
 import { SeatRow } from '../Model/SeatRow';
 import { MovieScreening } from '../Model/MovieScreening';
 import { TicketPrice } from '../Model/TicketPrice';
+import { MovieGenre } from '../Model/MovieGenre';
+import { Reservation } from '../Model/Reservation';
 import { CATCH_ERROR_VAR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
@@ -35,8 +37,17 @@ getMovie():Observable<Movie[]>{
   return this.http.get<Movie[]>(`${this.ROOT_URL}Movie`);
 }
 
+getMovieByTitle(movieTitle:string):Observable<Movie[]>{
+  return this.http.get<Movie[]>(`${this.ROOT_URL}Movie/title?title=${movieTitle}`);
+}
+//https://localhost:44305/api/Movie/title?title=Endgame
+
 postMovie(movie:Movie):Observable<Movie>{
   return this.http.post<Movie>(`${this.ROOT_URL}Movie`,movie);
+}
+
+postMovieGenre(movieGenre:MovieGenre):Observable<MovieGenre>{
+  return this.http.post<MovieGenre>(`${this.ROOT_URL}MovieGenre`,movieGenre);
 }
 
 deleteMovie(movieTitle:string):Observable<{}>{
@@ -89,4 +100,9 @@ postMovieScreening(movieScreening:MovieScreening):Observable<MovieScreening>{
 postTicketPrice(ticketPrice:TicketPrice):Observable<TicketPrice>{
   return this.http.post<TicketPrice>(`${this.ROOT_URL}TicketPrice`,ticketPrice);
 }
+
+postReservation(reservation:Reservation):Observable<Reservation>{
+  return this.http.post<Reservation>(`${this.ROOT_URL}Reservation`,reservation);
+}
+
 }

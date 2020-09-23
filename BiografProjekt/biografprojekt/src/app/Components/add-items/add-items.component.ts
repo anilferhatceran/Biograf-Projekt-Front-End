@@ -94,10 +94,55 @@ export class AddItemsComponent implements OnInit {
     }
   )
 
+  addMovieGenreForm = new FormGroup(
+    {
+      movie: new FormGroup({
+        movieID: new FormControl(''),
+      }),
+      genre: new FormGroup({
+        genreID: new FormControl(''),
+      }),
+    }
+  )
+
+  addReservationForm = new FormGroup(
+    {
+      user: new FormGroup({
+        userID: new FormControl(''),
+      }),
+      seatRow: new FormGroup(
+        {
+          seatRowID: new FormControl(''),
+      }),
+      movieScreening: new FormGroup(
+        {
+          movieScreeningID: new FormControl(''),
+        }),
+      ticketPrice: new FormGroup({
+        ticketPriceID: new FormControl(''),
+      }),
+      hall: new FormGroup({
+        hallID: new FormControl(''),
+      })
+    }
+  )
+
   ngOnInit():void {
     this.service.getSeatBySeatTaken().subscribe(seats =>{
       this.seat = seats;
     })
+  }
+
+  onSubmitCreateMovieGenre(){
+    console.log(this.addMovieGenreForm.value);
+
+    this.service.postMovieGenre(this.addMovieGenreForm.value).subscribe(movieGenre => console.log(movieGenre))
+  }
+
+  onSubmitCreateReservation(){
+    console.log(this.addReservationForm.value);
+
+    this.service.postReservation(this.addReservationForm.value).subscribe(reservation => console.log(reservation))
   }
 
   onSubmitCreateGenre(){
@@ -133,6 +178,7 @@ export class AddItemsComponent implements OnInit {
       this.service.postSeat(element).subscribe(seat => console.log(seat));
     }
   }
+
   onSubmitCreateRows(){
 
     for (let index = 0; index <= this.addRowsForm.value.numberOfRows; index++) {
@@ -142,16 +188,19 @@ export class AddItemsComponent implements OnInit {
       this.service.postRow(element).subscribe(row => console.log(row));
     }
   }
+
   onSubmitCreateSeatRow(){
     console.log(this.addSeatRowForm.value);
 
     this.service.postSeatRow(this.addSeatRowForm.value).subscribe(seatRow => console.log(seatRow));
   }
+
   onSubmitCreateMovieScreening(){
     console.log(this.addMovieScreeningForm.value);
 
     this.service.postMovieScreening(this.addMovieScreeningForm.value).subscribe(movieScreening => console.log(movieScreening));
   }
+
   onSubmitCreateTicketPrices(){
     console.log(this.addTicketPricesForm.value);
 

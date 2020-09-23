@@ -93,6 +93,7 @@
           <button type="submit" class="btn btn-primary">Submit Rows</button>
         </div>
       </form>
+
       <form [formGroup]="addMovieScreeningForm" (ngSubmit)="onSubmitCreateMovieScreening()">
         <h4>Add Movie Screening</h4>
         <div class="form-group">
@@ -107,7 +108,7 @@
           </div>
 
           <label for="addScreeningDate" class="col-form-label">Screening Date:</label>
-          <input formControlName="screeningDate" type="string" class="form-control" id="addScreeningDate">
+          <input formControlName="screeningDate" type="date" class="form-control" id="addScreeningDate">
 
           <label for="addScreeningStartTime" class="col-form-label">Screening Start-time:</label>
           <input formControlName="screeningStartTime" type="string" class="form-control" id="addScreeningStartTime">
@@ -119,6 +120,7 @@
           <button type="submit" class="btn btn-primary">Submit Movie Screening</button>
         </div>
       </form>
+
       <form [formGroup]="addSeatRowForm" (ngSubmit)="onSubmitCreateSeatRow()">
         <h4>Add Seat-Row</h4>
         <div class="form-group">
@@ -141,6 +143,7 @@
           <button type="submit" class="btn btn-primary">Submit Seat-Row</button>
         </div>
       </form>
+
       <form [formGroup]="addTicketPricesForm" (ngSubmit)="onSubmitCreateTicketPrices()">
         <h4>Add Ticket Prices</h4>
         <div class="form-group">
@@ -154,6 +157,58 @@
           <button type="submit" class="btn btn-primary">Submit Seats</button>
         </div>
       </form>
+
+      <form [formGroup]="addMovieGenreForm" (ngSubmit)="onSubmitCreateMovieGenre()">
+        <h4>Add MovieGenre</h4>
+        <div class="form-group">
+          <div formGroupName="movie">
+            <label for="addMovieID" class="col-form-label">Movie ID:</label>
+            <input formControlName="movieID" type="number" class="form-control" id="addMovieID">
+          </div>
+
+          <div formGroupName="genre">
+            <label for="addGenreID" class="col-form-label">Genre ID:</label>
+            <input formControlName="genreID" type="number" class="form-control" id="addGenreID">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit GenreID</button>
+        </div>
+      </form>
+
+      <form [formGroup]="addReservationForm" (ngSubmit)="onSubmitCreateReservation()">
+        <h4>Add Reservation</h4>
+        <div class="form-group">
+          <div formGroupName="user">
+            <label for="addUserID" class="col-form-label">User ID:</label>
+            <input formControlName="userID" type="number" class="form-control" id="addUserID">
+          </div>
+
+          <div formGroupName="seatRow">
+            <label for="addSeatRow" class="col-form-label">SeatRow ID:</label>
+            <input formControlName="seatRowID" type="number" class="form-control" id="addSeatRow">
+          </div>
+
+          <div formGroupName="movieScreening">
+            <label for="addMovieScreening" class="col-form-label">MovieScreening ID:</label>
+            <input formControlName="movieScreeningID" type="number" class="form-control" id="addMovieScreening">
+          </div>
+
+          <div formGroupName="ticketPrice">
+            <label for="addTicketPrice" class="col-form-label">Ticket ID:</label>
+            <input formControlName="ticketPriceID" type="number" class="form-control" id="addTicketPrice">
+          </div>
+
+          <div formGroupName="hall">
+            <label for="addHallID" class="col-form-label">Hall ID:</label>
+            <input formControlName="hallID" type="number" class="form-control" id="addHallID">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit GenreID</button>
+        </div>
+      </form>
+
     </div>
   </div>
 </div>
