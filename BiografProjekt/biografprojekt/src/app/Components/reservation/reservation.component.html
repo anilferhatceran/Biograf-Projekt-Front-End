@@ -8,7 +8,13 @@
         {{movies.movieRunTime}}
         {{movies.language.languageName}}
       </div>
-      <select [(ngModel)]="testingVar" (change)="onClickTest()" id="selectpicker">
+      <h3>Select row:</h3>
+      <select [(ngModel)]="rowNumber" (change)="onClickShowRows()" id="selectpicker">
+        <option  *ngFor="let rows of row"[row] = "rows">{{rows.rowNumber}}</option>
+      </select>
+      <h3>Select seat:</h3>
+
+      <select [(ngModel)]="seatNumber" (change)="onClickShowSeats()" id="selectpicker">
         <option  *ngFor="let seats of seat"[seat] = "seats">{{seats.seatNumber}}</option>
       </select>
     </div>

@@ -1,10 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <select [(ngModel)]="testingVar" (change)="onClickTest()" id="selectpicker">
-        <option  *ngFor="let seats of seat"[seat] = "seats">{{seats.seatNumber}}</option>
-      </select>
-
       <!-- <div class="dropdown">
         <button class="btn btn-secondary dropright dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown

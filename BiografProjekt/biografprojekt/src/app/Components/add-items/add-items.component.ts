@@ -12,7 +12,6 @@ import { Seat } from "src/app/Model/Seat";
 })
 export class AddItemsComponent implements OnInit {
 
-  testingVar;
   genres: Genre[];
   seat:Seat[];
 
@@ -128,9 +127,6 @@ export class AddItemsComponent implements OnInit {
   )
 
   ngOnInit():void {
-    this.service.getSeatBySeatTaken().subscribe(seats =>{
-      this.seat = seats;
-    })
   }
 
   onSubmitCreateMovieGenre(){
@@ -171,7 +167,7 @@ export class AddItemsComponent implements OnInit {
 
   onSubmitCreateSeats(){
 
-    for (let index = 0; index <= this.addSeatsForm.value.numberOfSeats; index++) {
+    for (let index = 1; index <= this.addSeatsForm.value.numberOfSeats; index++) {
 
       let element:any = {seatNumber: index};
 
@@ -181,7 +177,7 @@ export class AddItemsComponent implements OnInit {
 
   onSubmitCreateRows(){
 
-    for (let index = 0; index <= this.addRowsForm.value.numberOfRows; index++) {
+    for (let index = 1; index <= this.addRowsForm.value.numberOfRows; index++) {
 
       let element:any = {rowNumber: index};
 
@@ -205,10 +201,6 @@ export class AddItemsComponent implements OnInit {
     console.log(this.addTicketPricesForm.value);
 
     this.service.postTicketPrice(this.addTicketPricesForm.value).subscribe(ticketPrice => console.log(ticketPrice));
-  }
-
-  onClickTest(){
-      console.log(this.testingVar);
   }
 
 }
